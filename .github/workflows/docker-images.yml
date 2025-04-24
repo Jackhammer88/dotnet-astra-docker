@@ -33,7 +33,7 @@ jobs:
       with:
         context: ./astra-1.7
         push: true
-        tags: madfisht3/dotnet-sdk:alse1.7${{ needs.extract_tag.outputs.tag }}
+        tags: madfisht3/dotnet-sdk:alse1.7-${{ needs.extract_tag.outputs.tag }}
 
   alse1-8:
     needs: extract_tag
