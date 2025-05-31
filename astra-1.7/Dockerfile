@@ -1,7 +1,7 @@
 FROM registry.astralinux.ru/library/astra/ubi17:1.7.7.uu2 AS temp
 RUN apt-get update && apt-get install -y --no-install-recommends wget
-RUN wget https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.409/dotnet-sdk-8.0.409-linux-x64.tar.gz
-RUN mkdir /dotnet && tar -xzf dotnet-sdk-8.0.409-linux-x64.tar.gz -C /dotnet
+RUN wget https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.410/dotnet-sdk-8.0.410-linux-x64.tar.gz
+RUN mkdir /dotnet && tar -xzf dotnet-sdk-8.0.410-linux-x64.tar.gz -C /dotnet
 
 FROM registry.astralinux.ru/library/astra/ubi17:1.7.7.uu2 AS base
 RUN apt-get update && apt-get install -y --no-install-recommends \
