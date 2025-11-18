@@ -6,7 +6,6 @@ RUN mkdir /dotnet && tar -xzf dotnet-sdk-8.0.415-linux-x64.tar.gz -C /dotnet
 FROM registry.astralinux.ru/library/astra/ubi18:1.8.3.uu1 AS base
 RUN apt-get update && apt-get install -y --no-install-recommends \
     icu-devtools \
-    p7zip-full \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*
 

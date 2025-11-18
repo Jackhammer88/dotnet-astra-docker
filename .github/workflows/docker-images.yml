@@ -6,20 +6,7 @@ on:
       - 'v*'
 
 jobs:
-  extract_tag:
-    runs-on: ubuntu-latest
-    outputs:
-      tag: ${{ steps.extract.outputs.tag_without_v }}
-    steps:
-    - name: Extract tag without "v"
-      id: extract
-      run: |
-        RAW_TAG="${GITHUB_REF##*/}"
-        TAG="${RAW_TAG#v}"
-        echo "tag_without_v=$TAG" >> $GITHUB_OUTPUT
-
-  alse1-7:
-    needs: extract_tag
+  net8:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -31,12 +18,11 @@ jobs:
     - name: Build and push dotnet6
       uses: docker/build-push-action@v5
       with:
-        context: ./astra-1.7
+        context: ./net8
         push: true
-        tags: madfisht3/dotnet-sdk:alse1.7-${{ needs.extract_tag.outputs.tag }}
+        tags: madfisht3/dotnet-sdk:alse1.8-8.0.416
 
-  alse1-8:
-    needs: extract_tag
+  net10:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -48,6 +34,6 @@ jobs:
     - name: Build and push dotnet8
       uses: docker/build-push-action@v5
       with:
-        context: ./astra-1.8
+        context: ./net10
         push: true
-        tags: madfisht3/dotnet-sdk:alse1.8-${{ needs.extract_tag.outputs.tag }}
+        tags: madfisht3/dotnet-sdk:alse1.8-10.0.100

@@ -1,12 +1,11 @@
-FROM registry.astralinux.ru/library/astra/ubi17:1.7.8 AS temp
+FROM registry.astralinux.ru/library/astra/ubi18:1.8.3.uu1 AS temp
 RUN apt-get update && apt-get install -y --no-install-recommends wget
-RUN wget https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.415/dotnet-sdk-8.0.415-linux-x64.tar.gz
-RUN mkdir /dotnet && tar -xzf dotnet-sdk-8.0.415-linux-x64.tar.gz -C /dotnet
+RUN wget https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.100/dotnet-sdk-10.0.100-linux-x64.tar.gz
+RUN mkdir /dotnet && tar -xzf dotnet-sdk-10.0.100-linux-x64.tar.gz -C /dotnet
 
-FROM registry.astralinux.ru/library/astra/ubi17:1.7.8 AS base
+FROM registry.astralinux.ru/library/astra/ubi18:1.8.3.uu1 AS base
 RUN apt-get update && apt-get install -y --no-install-recommends \
     icu-devtools \
-    p7zip-full \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*
 

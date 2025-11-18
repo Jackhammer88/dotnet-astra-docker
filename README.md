@@ -14,7 +14,6 @@ Images are automatically built and pushed to [Docker Hub](https://hub.docker.com
 
 ## Tag format
 For example:
-- `madfisht3/dotnet-sdk:alse1.7-[dotnet version] - for Astra UBI 1.7
 - `madfisht3/dotnet-sdk:alse1.8-[dotnet version] - for Astra UBI 1.8
 
 The tag format is **alse1.8-8.0.408** this means **Astra Linux UBI 1.8**, dotnet version **8.0.408**
@@ -27,7 +26,6 @@ The SDK is extracted into /opt/dotnet, with DOTNET_ROOT and PATH configured acco
 ## Included by default
 
 - .NET SDK (version pinned by tag)
-- p7zip-full — available out-of-the-box for handling .7z and other archive formats
 
 ## Usage
 
@@ -40,7 +38,7 @@ docker pull madfisht3/dotnet-sdk:alse1.8-8.0.408
 Or in your own Dockerfile:
 
 ```
-FROM madfisht3/dotnet-sdk:alse1.7-8.0.408
+FROM madfisht3/dotnet-sdk:alse1.8-8.0.408
 
 WORKDIR /app
 COPY . .
