@@ -15,12 +15,12 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_LOGIN }}
         password: ${{ secrets.DOCKER_TOKEN }}
-    - name: Build and push dotnet6
+    - name: Build and push dotnet 8
       uses: docker/build-push-action@v5
       with:
         context: ./net8
         push: true
-        tags: madfisht3/dotnet-sdk:alse1.8-8.0.416
+        tags: madfisht3/dotnet-sdk:alse1.8-8.0.417
 
   net10:
     runs-on: ubuntu-latest
@@ -31,9 +31,9 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_LOGIN }}
         password: ${{ secrets.DOCKER_TOKEN }}
-    - name: Build and push dotnet8
+    - name: Build and push dotnet 10
       uses: docker/build-push-action@v5
       with:
         context: ./net10
         push: true
-        tags: madfisht3/dotnet-sdk:alse1.8-10.0.101
+        tags: madfisht3/dotnet-sdk:alse1.8-10.0.102
