@@ -2,7 +2,7 @@
 
 This repository contains Dockerfiles and GitHub Actions workflows for building .NET SDK images on top of Astra Linux SE
 
-These images are tailored for secure environments that require a Russian-certified OS base, while still providing access to modern .NET SDK versions (such as `8.0.408`).
+These images are tailored for secure environments that require a Russian-certified OS base, while still providing access to modern .NET SDK versions (such as `10.0.103`).
 
 ---
 
@@ -16,7 +16,7 @@ Images are automatically built and pushed to [Docker Hub](https://hub.docker.com
 For example:
 - `madfisht3/dotnet-sdk:alse1.8-[dotnet version] - for Astra UBI 1.8
 
-The tag format is **alse1.8-8.0.408** this means **Astra Linux UBI 1.8**, dotnet version **8.0.408**
+The tag format is **alse1.8-10.0.103** this means **Astra Linux UBI 1.8**, dotnet version **10.0.103**
 
 ## Build Features
 
@@ -32,13 +32,13 @@ The SDK is extracted into /opt/dotnet, with DOTNET_ROOT and PATH configured acco
 Pull the image directly:
 
 ```bash
-docker pull madfisht3/dotnet-sdk:alse1.8-8.0.408
+docker pull madfisht3/dotnet-sdk:alse1.8-10.0.103
 ```
 
 Or in your own Dockerfile:
 
 ```
-FROM madfisht3/dotnet-sdk:alse1.8-8.0.408
+FROM madfisht3/dotnet-sdk:alse1.8-10.0.103
 
 WORKDIR /app
 COPY . .
@@ -53,7 +53,7 @@ We do not provide a latest tag. This is by design to encourage explicit version 
 Always specify the full tag like:
 
 ```
-madfisht3/dotnet-sdk:alse1.8-8.0.408
+madfisht3/dotnet-sdk:alse1.8-10.0.103
 ```
 
 ## Feedback
