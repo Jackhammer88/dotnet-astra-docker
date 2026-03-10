@@ -1,5 +1,5 @@
 ARG NET_VERSION=10.0.103
-ARG ASTRA_VERSION=1.8.4
+ARG ASTRA_VERSION=1.8.5
 
 FROM registry.astralinux.ru/library/astra/ubi18:${ASTRA_VERSION} AS temp
 ARG NET_VERSION
