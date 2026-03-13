@@ -20,4 +20,4 @@ jobs:
       with:
         context: ./net10
         push: true
-        tags: madfisht3/dotnet-sdk:alse1.8-10.0.103
+        tags: madfisht3/dotnet-sdk:alse1.8-10.0.201
